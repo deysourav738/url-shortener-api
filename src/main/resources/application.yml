@@ -1,0 +1,15 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: analytics-consumers
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+  cache:
+    provider: ${SPRING_CACHE_PROVIDER:redis}
+  redis:
+    host: ${SPRING_REDIS_HOST:localhost}   # Default to localhost if not set
+    port: ${SPRING_REDIS_PORT:6379}        # Default to 6379 if not set
