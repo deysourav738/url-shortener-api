@@ -11,5 +11,5 @@ spring:
   cache:
     provider: ${SPRING_CACHE_PROVIDER:redis}
   redis:
-    host: ${SPRING_REDIS_HOST:redis}   # Default to localhost if not set
+    host: ${SPRING_REDIS_HOST:redis}   # Default to redis if not set
     port: ${SPRING_REDIS_PORT:6379}        # Default to 6379 if not set

@@ -9,7 +9,7 @@ import java.util.Optional;
 public interface UrlRepository extends JpaRepository<UrlEntity, Long> {
     Optional<UrlEntity> findByShortUrl(String shortUrl);
 
-    void deleteByExpiryDateBefore(LocalDateTime now);
+    int deleteByExpiryDateBefore(LocalDateTime now);
 
-    void deleteByCreatedAtBeforeAndExpiryDateIsNull(LocalDateTime localDateTime);
+    int deleteByCreatedAtBeforeAndExpiryDateIsNull(LocalDateTime localDateTime);
 }
